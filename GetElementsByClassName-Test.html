@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Relative path to file getElementsByClassName.js -->
+  <script src="../../seip2005-recursion/src/getElementsByClassName.js"></script>
+  <script src="jquery.js"></script>
+</head>
+<body class="targetClassName">
+  <div class="targetClassName"></div>
+  <div class="otherClassName targetClassName"></div>
+  <div><div class="targetClassName"></div></div>
+  <div><div class="targetClassName"><div class="targetClassName"></div></div></div>
+  <div><div></div><div><div class="targetClassName"></div></div></div>
+  <div><div class="targetClassName"></div><div class="targetClassName"></div></div>
+  <div><div class="somediv"><div class="innerdiv"><span class="targetClassName">yay</span></div></div></div>
+  <script>
+    $(document).ready(function (){
+      // using built-in getElementsByClassName method
+      console.log('Expected results:')
+      console.log(document.getElementsByClassName('targetClassName'));
+      // using user-defined getElementsByClassName function
+      console.log('Actual results:')
+      console.log(getElementsByClassName('targetClassName'));
+    });
+  </script>
+</body>
+</html>
